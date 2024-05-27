@@ -6,17 +6,25 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegistroActividadComponent } from './pages/registro-actividad/registro-actividad.component';
 import { ConsultaActividadComponent } from './pages/consulta-actividad/consulta-actividad.component';
+import { NavComponent } from './shared/nav/nav.component';
+import { HeaderComponent } from './shared/header/header.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegistroActividadComponent,
-    ConsultaActividadComponent
+    ConsultaActividadComponent,
+    NavComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

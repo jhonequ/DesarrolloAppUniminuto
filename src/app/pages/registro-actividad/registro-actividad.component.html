@@ -1,1 +1,74 @@
-<h2>registro-actividad works!</h2>
+<div>
+  <h2>Registro de Actividades</h2>
+  <form (ngSubmit)="submitForm()">
+      <div class="form-group">
+          <label for="titulo"> Titulo: </label>
+          <input type="text" id="titulo" name="titulo" class="form-control" [(ngModel)]= "titulo" required>
+      </div>
+
+      <div class="form-group">
+          <label for="horas"> Horas Trabajadas: </label>
+          <input type="number" id="horas" name="horas" class="form-control" [(ngModel)]= "horas" required>
+      </div>
+
+      <div class="form-group">
+          <label for="descripcion"> Descripcion de la Actividad: </label>
+          <textarea id="descripcion" name="descripcion" class="form-control" [(ngModel)]="descripcion" required></textarea>
+      </div>
+
+      <div class="form-group">
+          <label for="personas"> Personas:</label>
+          <input type="text" id="personas" name="personas" class="form-control" [(ngModel)]="personas" required>
+      </div>
+
+      <div class="form-group">
+          <label for="estado"> Estado </label>
+          <select  id="estado" name="estado" class="form-control" [(ngModel)]= "estado" required>
+           <option value="Pendiente">Pendiente</option>
+           <option value="activa">Activa</option>
+           <option value="en proceso">En proceso</option>
+           <option value="terminada">Terminada</option>
+          </select>
+      </div>
+
+      <div class="form-group">
+          <label for="fechainicial"> Fecha Inicial:</label>
+          <input type="date" id="fechainicial" name="fechainicial" class="form-control" [(ngModel)]= "fechainicial" required>
+      </div>
+
+      <div class="form-group">
+          <label for="fechafinal"> Fecha Final:</label>
+          <input type="date" id="fechafinal" name="fechafinal" class="form-control" [(ngModel)]= "fechafinal" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Registrar Actividad</button>
+  </form>
+
+  <h2>Actividades Registradas</h2>
+  <table class="table">
+      <thead>
+          <tr>
+              <th>Titulo</th>
+              <th>Horas</th>
+              <th>Descripcion</th>
+              <th>Personas</th>
+              <th>Estado</th>
+              <th>Fecha Inicial</th>
+              <th>Fecha Final</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let actividad of actividades; let i = index">
+              <td>{{ actividad.titulo }}</td>
+              <td>{{ actividad.horas }}</td>
+              <td>{{ actividad.descripcion }}</td>
+              <td><a href="#" (click)="verPersona(actividad.personas)">{{ actividad.personas }}</a></td>
+              <td>{{ actividad.estado }}</td>
+              <td>{{ actividad.fechainicial }}</td>
+              <td>{{ actividad.fechafinal }}</td>
+              <td>
+                  <button class="btn btn-danger" (click)="eliminarActividad(i)">Eliminar</button>
+              </td>
+          </tr>
+      </tbody>
+  </table>
+</div>

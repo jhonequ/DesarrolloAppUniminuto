@@ -8,7 +8,7 @@ import { RegistroActividadComponent } from './pages/registro-actividad/registro-
 import { ConsultaActividadComponent } from './pages/consulta-actividad/consulta-actividad.component';
 import { NavComponent } from './shared/nav/nav.component';
 import { HeaderComponent } from './shared/header/header.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -24,7 +24,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

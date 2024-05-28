@@ -11,7 +11,7 @@ interface Actividad {
 }
 
 @Component({
-  selector: 'app-registroactividad',
+  selector: 'app-registro-actividad',
   templateUrl: './registro-actividad.component.html',
   styleUrl: './registro-actividad.component.css'
 })
@@ -26,7 +26,7 @@ export class RegistroActividadComponent {
 
   actividades: Actividad[] = [];
 
-  submitForm() {
+  submitForm(){
     const nuevaActividad: Actividad = {
       titulo: this.titulo,
       horas: this.horas,
@@ -48,11 +48,11 @@ export class RegistroActividadComponent {
     this.fechafinal = '';
   }
 
-  eliminarActividad(index: number) {
+  eliminarActividad(index: number){
     this.actividades.splice(index, 1);
   }
 
-  verPersona(persona: string) {
+  verPersona(persona: string){
     alert('Informacion de la persona: ${persona}');
   }
 }
